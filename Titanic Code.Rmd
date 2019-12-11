@@ -1,0 +1,7 @@
+
+titanic_original$embarked[is.na(titanic_original$embarked)] <- 'S'
+titanic_clean <- titanic_original
+titanic_clean$age[is.na(titanic_original$age)] <- mean(titanic_clean$age, na.rm = TRUE)
+read.csv("/Users/caelum/Springboard/Springboard/titanic/titanic_clean.csv", na.strings = "")
+titanic_clean$has_cabin_number = as.integer(titanic_clean$cabin >= 0)
+titanic_clean$has_cabin_number[is.na(titanic_clean$cabin)] <- 0
